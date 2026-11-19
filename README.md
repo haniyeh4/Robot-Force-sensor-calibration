@@ -71,21 +71,25 @@ These details match the implementation and the reported numbers:
 
 See [`data/README.md`](data/README.md) for the file list, field definitions and checksums.
 
+## Recording-level validation (manuscript Section 3.5, Table 3)
 
-Recording-level validation (manuscript Section 3.5, Table 3)
 `scripts/07_recording_level.py` evaluates the second-degree polynomial model on an additional
 session of 11 random-motion recordings (`data/aug29/`, see its README) with (i) a random
 sample-level 80/20 split and (ii) leave-one-recording-out cross-validation.
+
 ```
 python scripts/07_recording_level.py
 ```
+
 Expected output (RMSE averaged over the six wrench components):
-Recordings	Random 80/20 split	Leave-one-recording-out
-1-10 (similar motion)	0.016	0.017
-1-11 (incl. high-acceleration recording 11)	0.019	0.072
+
+| Recordings | Random 80/20 split | Leave-one-recording-out |
+|---|---|---|
+| 1-10 (similar motion) | 0.016 | 0.017 |
+| 1-11 (incl. high-acceleration recording 11) | 0.019 | 0.072 |
+
 Recording 11 held out (trained on 1-10): 0.25. Results are written to
 `results/recording_level_aug29.json`.
-
 
 ## Citation
 
