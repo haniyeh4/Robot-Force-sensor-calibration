@@ -63,7 +63,8 @@ These details match the implementation and the reported numbers:
   `FF_EE - FF_EE_Quasi`. Errors against the unfiltered signal are reported separately (`*_vs_raw`).
 - **Metrics.** As in the manuscript, `all6_*` metrics average all six wrench components (forces in N,
   torques in N·m). Force-only (`force_*`), per-axis and torque metrics are also reported. %FSO uses
-  500 N, as in the manuscript.
+  the rated sensing ranges of the ATI Gamma SI-130-10 (130 N for Fx and Fy, 400 N for Fz; 130 N for the
+  total force magnitude), as in the revised manuscript.
 - **MLP.** Architecture 9-64-128-64-6 with Linear-ReLU-BatchNorm-Dropout(0.2), giving 18,118 parameters.
   Training: Adam with lr 1e-3, MSE loss, batch 64, 30 epochs. The original training run was not seeded
   and its weights could not be matched to the reported metrics, so the model is retrained here with fixed
