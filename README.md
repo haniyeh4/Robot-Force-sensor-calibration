@@ -20,6 +20,8 @@ pip install -r requirements.txt
 ./run_all.sh            # about 15-25 min on a laptop CPU
 ```
 
+**Please install the exact versions in `requirements.txt`.** The quasi-static polynomial model uses unscaled orientation angles, and its third- and higher-degree results are sensitive to the scikit-learn version; the reported results were obtained with scikit-learn 1.7.0.
+
 Each script can also be run on its own. Outputs:
 
 - `results/*.json`: all metrics
